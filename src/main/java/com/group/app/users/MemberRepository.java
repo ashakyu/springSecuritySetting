@@ -1,10 +1,12 @@
 package com.group.app.users;
 
-import java.lang.reflect.Member;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Optional;
+
 public interface MemberRepository extends JpaRepository<Member, Long> {
-	Optional<Member> fildByMemberId(String memberId);
+
+    Optional<Member> findByMemberId(String memberId);
+
 }

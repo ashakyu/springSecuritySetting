@@ -9,18 +9,9 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/spring/root-context.xml
-			<!-- Add spring security congifuration file -->
-			/WEB-INF/spring/security-context.xml
 		</param-value>
 	</context-param>
 
-	<!-- security-context.xml -->
-	<security:http>
-		<security:form-login />
-	</security:http>
-	<security:authentication-manager>
-
-	</security:authentication-manager>
 
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
@@ -47,17 +38,7 @@
 	</servlet-mapping>
 
 
-	<!-- security filter -->
-	<filter>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterPorxy
-		</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>springSecurityFilterChain</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
+
 	<!-- encoding filter -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -67,7 +48,7 @@
 			<param-value>utf-8</param-value>
 		</init-param>
 	</filter>
-	
+
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>

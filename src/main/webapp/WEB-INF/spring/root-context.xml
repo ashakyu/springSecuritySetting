@@ -4,32 +4,32 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean id="dataSource"
-		class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close">
-		<property name="driverClass" value="oracle.jdbc.OracleDriver" />
-		<property name="jdbcUrl"
-			value="jdbc:oracle:thin:@localhost:1521:xe" />
-		<property name="user" value="tester" />
-		<property name="password" value="1234" />
-		<property name="maxPoolSize" value="100" />
-		<property name="maxIdleTime" value="600" />
-		<property name="idleConnectionTestPeriod" value="300" />
-	</bean>
+<!-- 	<bean id="dataSource" -->
+<!-- 		class="com.mchange.v2.c3p0.ComboPooledDataSource" -->
+<!-- 		destroy-method="close"> -->
+<!-- 		<property name="driverClass" value="oracle.jdbc.OracleDriver" /> -->
+<!-- 		<property name="jdbcUrl" -->
+<!-- 			value="jdbc:oracle:thin:@localhost:1521:xe" /> -->
+<!-- 		<property name="user" value="tester" /> -->
+<!-- 		<property name="password" value="1234" /> -->
+<!-- 		<property name="maxPoolSize" value="100" /> -->
+<!-- 		<property name="maxIdleTime" value="600" /> -->
+<!-- 		<property name="idleConnectionTestPeriod" value="300" /> -->
+<!-- 	</bean> -->
 	
-	<bean id="sqlSessionFactory"
-		class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
+<!-- 	<bean id="sqlSessionFactory" -->
+<!-- 		class="org.mybatis.spring.SqlSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
 <!-- 		<property name="configLocation" -->
 <!-- 			value="classpath:mybatis-config.xml" /> -->
 <!-- 		<property name="mapperLocations" -->
 <!-- 			value="classpath:mappers/**/*-mapper.xml" /> -->
-	</bean>
+<!-- 	</bean> -->
 
-	<bean id="sqlSessionTemplate"
-		class="org.mybatis.spring.SqlSessionTemplate"
-		destroy-method="clearCache">
-		<constructor-arg ref="sqlSessionFactory" />
-	</bean>
+<!-- 	<bean id="sqlSessionTemplate" -->
+<!-- 		class="org.mybatis.spring.SqlSessionTemplate" -->
+<!-- 		destroy-method="clearCache"> -->
+<!-- 		<constructor-arg ref="sqlSessionFactory" /> -->
+<!-- 	</bean> -->
 		
 </beans>
